@@ -18,3 +18,25 @@ let matches = 0;
 let time = 0;
 let openCards = [];
 let startTime;
+
+// function to shuffle emojis
+function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+    while (currentIndex !== 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+    return array;
+}
+
+// function to update timer
+function timer() {
+    time++;
+    const minutes = Math.floor(time / 60);
+    const seconds = time % 60;
+    timePane.textContent = minutes + ':' + seconds.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false});
+    return `${minutes}:${seconds.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}`;
+}
