@@ -56,3 +56,39 @@ function starsUpdate() {
         starsPane[0].style.color = '#fff';
     }
 }
+
+// function to start or restart the game
+function gameStart(array) {
+    // make emoji pairs and shuffle the array
+    array = shuffle(array.concat(array));
+
+    // create the list item for each emoji and add it to the board
+    let cardHTML = ''
+    array.forEach(function(i) {
+        cardHTML += `<li class="card">${i}</li>`
+    });
+    board.innerHTML = cardHTML;
+
+    // reset moves, stars, time, matches
+    moves = 0;
+    movesPane.textContent = moves;
+
+    stars = 3;
+    starsPane.forEach(function(i) {
+        i.style.color = '#ffd800';
+    });
+
+    time = 0;
+    timePane.textContent = `0:00`;
+
+    matches = 0;
+
+    // hide modal on gameStart
+    modal.style.top = '-5000px';
+
+    // if timer is still going stop it
+    if (startTime) {
+        clearInterval(startTime);
+        startTime = undefined;
+    }
+}
