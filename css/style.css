@@ -84,3 +84,29 @@ header h1 {
     padding: 32px;
     box-shadow: 15px 10px 15px rgba(250,250,250,0.2);
 }
+
+/* FOOTER */
+footer {
+   text-align: center;
+   color: black;
+   padding: 10px;
+   width: 100%;
+   background-color: white;
+   font-family: 'Helvetica Neue', serif;
+   margin-top: 2em;
+}
+
+.social,
+.social a {
+   font-size: 35px;
+   color: #bbb;
+}
+
+.fa-twitter, .fa-envelope {
+   padding: 5px 10px;
+   margin: 0 5px;
+}
+
+.hearts {
+   color: red;
+}
