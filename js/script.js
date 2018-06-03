@@ -106,6 +106,9 @@ function gameEnd() {
     clearInterval(startTime);
 }
 
+// start the game
+gameStart(emojis);
+
 board.addEventListener('click', function(evt) {
     const card = evt.target;
     // only flip a card and add to array if a card is clicked on and there is less than 2 cards open
