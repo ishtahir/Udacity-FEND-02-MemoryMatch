@@ -99,6 +99,18 @@ header h1 {
     user-select: none;
 }
 
+.board .open {
+    background: #ddd;
+    font-size: 50px;
+    color: #000;
+}
+
+.board .match {
+    background: #d183ce;
+    cursor: default;
+    font-size: 50px;
+}
+
 /* GAMEEND MODAL */
 .modal {
    width: 50%;
