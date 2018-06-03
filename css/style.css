@@ -46,3 +46,24 @@ header h1 {
     text-align: center;
     letter-spacing: 8px;
 }
+
+/* SCORECARD */
+.scorecard {
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Roboto', sans-serif;
+}
+
+.scorecard p {
+    margin: 0;
+    padding: 0;
+}
+
+.scorecard .restart {
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.scorecard .restart:hover {
+    transform: rotate(1turn);
+}
