@@ -40,3 +40,19 @@ function timer() {
     timePane.textContent = minutes + ':' + seconds.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false});
     return `${minutes}:${seconds.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}`;
 }
+
+// function to update the star count relative to the moves count
+function starsUpdate() {
+    if (moves > 12) {
+        stars = 2;
+        starsPane[2].style.color = '#fff';
+    }
+    if (moves > 16 && moves < 21) {
+        stars = 1;
+        starsPane[1].style.color = '#fff';
+    }
+    if (moves > 20) {
+        stars = 0;
+        starsPane[0].style.color = '#fff';
+    }
+}
