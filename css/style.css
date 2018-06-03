@@ -22,3 +22,27 @@ body {
     font-family: 'IM Fell French Canon SC', serif;
     color: #fff;
 }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* HEADER */
+header {
+    width: 660px;
+    min-width: 360px;
+    margin: 20px auto;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+header h1 {
+    margin: 20px auto 40px auto;
+    border-bottom: 3px solid #fff;
+    width: 600px;
+    text-align: center;
+    letter-spacing: 8px;
+}
