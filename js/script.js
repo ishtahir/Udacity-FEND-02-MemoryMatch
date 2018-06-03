@@ -92,3 +92,16 @@ function gameStart(array) {
         startTime = undefined;
     }
 }
+
+// function to end the game
+function gameEnd() {
+    // show modal on gameEnd
+    modal.style.top = '0';
+
+    // display congrats message
+    congrats.innerHTML = `Congratulations!<br>You win.`;
+    message.innerHTML = `Total Moves: ${moves}<br>Total Stars: ${stars}<br>Total Time: ${timer()}`;
+
+    // stop the timer
+    clearInterval(startTime);
+}
