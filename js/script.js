@@ -156,3 +156,12 @@ board.addEventListener('click', function(evt) {
         }
     }
 });
+
+// restart the game
+restartBtn.addEventListener('click', function() {
+    gameStart(emojis);
+});
+
+playAgainBtn.addEventListener('click', function() {
+    gameStart(emojis);
+})
