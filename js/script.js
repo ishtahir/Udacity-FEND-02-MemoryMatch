@@ -105,3 +105,54 @@ function gameEnd() {
     // stop the timer
     clearInterval(startTime);
 }
+
+board.addEventListener('click', function(evt) {
+    const card = evt.target;
+    // only flip a card and add to array if a card is clicked on and there is less than 2 cards open
+    if (card.classList.contains('card') && openCards.length < 2) {
+        // start the timer when a card is clicked for the first time
+        if (!startTime) {
+            startTime = setInterval(timer, 1000);
+        }
+        // if any of the cards are open or matched don't do anything else with that card
+        if (!(card.classList.contains('open')) && !(card.classList.contains('show')) && !(card.classList.contains('match'))) {
+            card.classList.add('open', 'show');
+            openCards.push(card);
+            // if there are 2 cards in the openCards array
+            if (openCards.length === 2) {
+                // and if both cards match
+                if (openCards[0].textContent === openCards[1].textContent) {
+                    openCards[0].classList.remove('open', 'show');
+                    openCards[1].classList.remove('open', 'show');
+                    openCards[0].classList.add('match', 'correct');
+                    openCards[1].classList.add('match', 'correct');
+                    moves++;
+                    movesPane.textContent = moves;
+                    starsUpdate();
+                    setTimeout(function() {
+                        openCards[0].classList.remove('correct');
+                        openCards[1].classList.remove('correct');
+                        openCards = [];
+                    }, 1000);
+                    matches++;
+                    if (matches === 8) {
+                        // run gameover function
+                        gameEnd();
+                    }
+                } else {
+                    //if both cards don't match
+                    openCards[0].classList.add('incorrect');
+                    openCards[1].classList.add('incorrect');
+                    moves++;
+                    movesPane.textContent = moves;
+                    starsUpdate();
+                    setTimeout(function() {
+                        openCards[0].classList.remove('open', 'show', 'incorrect');
+                        openCards[1].classList.remove('open', 'show', 'incorrect');
+                        openCards = [];
+                    }, 1000);
+                }
+            }
+        }
+    }
+});
