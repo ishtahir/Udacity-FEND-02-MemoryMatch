@@ -18,7 +18,7 @@ body {
 }
 
 body {
-    background: #4a4a4a url('../img/dark_embroidery.png');
+    background: #4a4a4a url('../images/dark_embroidery.png');
     font-family: 'IM Fell French Canon SC', serif;
     color: #fff;
 }
@@ -66,4 +66,21 @@ header h1 {
 
 .scorecard .restart:hover {
     transform: rotate(1turn);
+}
+
+/* BOARD AND CARDS */
+.board {
+    width: 660px;
+    min-height: 680px;
+    min-width: 360px;
+    background: linear-gradient(#e9ffa3, #2eacba);
+    margin: 30px auto;
+    list-style: none;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px;
+    box-shadow: 15px 10px 15px rgba(250,250,250,0.2);
 }
