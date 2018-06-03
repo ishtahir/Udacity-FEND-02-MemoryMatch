@@ -63,13 +63,13 @@ function gameStart(array) {
     array = shuffle(array.concat(array));
 
     // create the list item for each emoji and add it to the board
-    let cardHTML = ''
+    let cardHTML = '';
     array.forEach(function(i) {
-        cardHTML += `<li class="card">${i}</li>`
+        cardHTML += `<li class="card">${i}</li>`;
     });
     board.innerHTML = cardHTML;
 
-    // reset moves, stars, time, matches
+    // reset moves, stars, time, matches, openCards array
     moves = 0;
     movesPane.textContent = moves;
 
@@ -82,6 +82,8 @@ function gameStart(array) {
     timePane.textContent = `0:00`;
 
     matches = 0;
+
+    openCards = [];
 
     // hide modal on gameStart
     modal.style.top = '-5000px';
