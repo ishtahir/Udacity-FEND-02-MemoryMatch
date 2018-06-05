@@ -56,6 +56,10 @@ function starsUpdate() {
     }
 }
 
+function showModal() {
+    modal.classList.add('show-modal');
+}
+
 // function to start or restart the game
 function gameStart(array) {
     // make emoji pairs and shuffle the array
@@ -85,7 +89,7 @@ function gameStart(array) {
     openCards = [];
 
     // hide modal on gameStart
-    modal.style.top = '-5000px';
+    modal.classList.remove('show-modal');
 
     // if timer is still going stop it
     if (startTime) {
@@ -96,12 +100,13 @@ function gameStart(array) {
 
 // function to end the game
 function gameEnd() {
-    // show modal on gameEnd
-    modal.style.top = '0';
-
     // display congrats message
     congrats.innerHTML = `Congratulations!<br>You win.`;
     stats.innerHTML = `Total Moves: ${moves}<br>Total Stars: ${stars}<br>Total Time: ${timer()}`;
+    playAgainBtn.innerHTML = 'Play Again';
+
+    // show modal on gameEnd
+    showModal();
 
     // stop the timer
     clearInterval(startTime);
@@ -139,7 +144,7 @@ board.addEventListener('click', function(evt) {
                         openCards = [];
                     }, 1000);
                     matches++;
-                    if (matches === 8) {
+                    if (matches === 1) {
                         // run gameover function
                         gameEnd();
                     }
