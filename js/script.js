@@ -1,6 +1,5 @@
 // declare all const variables
 const emojis = ['😍', '😡', '😱', '🤢', '🤡', '💩', '💙', '😂'];
-const cards = document.querySelectorAll('.card');
 const board = document.querySelector('.board');
 const restartBtn = document.querySelector('.restart');
 const modal = document.querySelector('.modal');
@@ -8,7 +7,7 @@ const playAgainBtn = document.querySelector('button');
 const starsPane = document.querySelectorAll('.fa-star');
 const timePane = document.querySelector('.time');
 const movesPane = document.querySelector('.moves');
-const message = document.querySelector('.message');
+const stats = document.querySelector('.stats');
 const congrats = document.querySelector('.congrats');
 
 // declare all let variables
@@ -102,7 +101,7 @@ function gameEnd() {
 
     // display congrats message
     congrats.innerHTML = `Congratulations!<br>You win.`;
-    message.innerHTML = `Total Moves: ${moves}<br>Total Stars: ${stars}<br>Total Time: ${timer()}`;
+    stats.innerHTML = `Total Moves: ${moves}<br>Total Stars: ${stars}<br>Total Time: ${timer()}`;
 
     // stop the timer
     clearInterval(startTime);
