@@ -144,7 +144,7 @@ board.addEventListener('click', function(evt) {
                         openCards = [];
                     }, 1000);
                     matches++;
-                    if (matches === 1) {
+                    if (matches === 8) {
                         // run gameover function
                         gameEnd();
                     }
