@@ -4,7 +4,7 @@ const board = document.querySelector('.board');
 const restartBtn = document.querySelector('.restart');
 const modal = document.querySelector('.modal');
 const playAgainBtn = document.querySelector('button');
-const starsPane = document.querySelectorAll('.fa-star');
+const starsPane = document.querySelectorAll('.star-emoji');
 const timePane = document.querySelector('.time');
 const movesPane = document.querySelector('.moves');
 const stats = document.querySelector('.stats');
@@ -44,15 +44,15 @@ function timer() {
 function starsUpdate() {
     if (moves > 12) {
         stars = 2;
-        starsPane[2].style.color = '#fff';
+        starsPane[2].style.display = 'none';
     }
     if (moves > 16 && moves < 21) {
         stars = 1;
-        starsPane[1].style.color = '#fff';
+        starsPane[1].style.display = 'none';
     }
     if (moves > 20) {
         stars = 0;
-        starsPane[0].style.color = '#fff';
+        starsPane[0].style.display = 'none';
     }
 }
 
@@ -100,8 +100,18 @@ function gameStart(array) {
 
 // function to end the game
 function gameEnd() {
+    // determine star emojis
+    if (stars === 3) {
+        stars = '⭐️⭐️⭐️';
+    } else if (stars === 2) {
+        stars = '⭐️⭐️';
+    } else if (stars === 1) {
+        stars = '⭐️';
+    } else {
+        stars = 0;
+    }
     // display congrats message
-    congrats.innerHTML = `Congratulations!<br>You win.`;
+    congrats.innerHTML = `🎉Congratulations!🎉<br>You 🎊 win.`;
     stats.innerHTML = `Total Moves: ${moves}<br>Total Stars: ${stars}<br>Total Time: ${timer()}`;
     playAgainBtn.innerHTML = 'Play Again';
 

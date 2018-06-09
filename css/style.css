@@ -106,7 +106,7 @@ header h1 {
 }
 
 .board .match {
-    background: #d183ce;
+    background: #60ff9a;
     cursor: default;
     font-size: 50px;
 }
@@ -115,13 +115,13 @@ header h1 {
     animation-name: shake;
     animation-duration: 0.5s;
     transition: all 0.5s;
-    background-color: #e20000 !important;
+    background-color: #ff4f8f !important;
  }
 
 .board .correct {
     transform: rotate(360deg);
     transition: all 0.5s;
-    background-color: #00e22d !important;
+    background-color: #60ff9a !important;
 }
 
 /* GAMEEND MODAL */
