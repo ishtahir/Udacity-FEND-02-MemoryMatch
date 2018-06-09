@@ -1,5 +1,5 @@
 // declare all const variables
-const emojis = ['😍', '😡', '😱', '🤢', '🤡', '💩', '💙', '😂'];
+const emojis = ['😍', '😡', '😱', '😜', '😳', '💩', '💙', '😂'];
 const board = document.querySelector('.board');
 const restartBtn = document.querySelector('.restart');
 const modal = document.querySelector('.modal');
