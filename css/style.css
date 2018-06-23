@@ -73,7 +73,7 @@ header h1 {
     width: 660px;
     min-height: 680px;
     min-width: 360px;
-    background: linear-gradient(#e9ffa3, #2eacba);
+    background: linear-gradient(#a3ebff, #9e6bff);
     margin: 30px auto;
     list-style: none;
     border-radius: 10px;
@@ -106,7 +106,7 @@ header h1 {
 }
 
 .board .match {
-    background: #60ff9a;
+    background: #00ff00;
     cursor: default;
     font-size: 50px;
 }
@@ -115,13 +115,13 @@ header h1 {
     animation-name: shake;
     animation-duration: 0.5s;
     transition: all 0.5s;
-    background-color: #ff4f8f !important;
+    background-color: #ff0000 !important;
  }
 
 .board .correct {
     transform: rotate(360deg);
-    transition: all 0.5s;
-    background-color: #60ff9a !important;
+    transition: all 0.3s;
+    background-color: #00ff00 !important;
 }
 
 /* GAMEEND MODAL */

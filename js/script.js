@@ -152,7 +152,7 @@ board.addEventListener('click', function(evt) {
                         openCards[0].classList.remove('correct');
                         openCards[1].classList.remove('correct');
                         openCards = [];
-                    }, 1000);
+                    }, 300);
                     matches++;
                     if (matches === 8) {
                         // run gameover function
