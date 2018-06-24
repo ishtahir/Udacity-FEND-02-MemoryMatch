@@ -102,14 +102,14 @@ header h1 {
 
 .board .open {
     background: #ddd;
-    font-size: 70px;
+    font-size: 80px;
     color: #000;
 }
 
 .board .match {
     background: #00ff00;
     cursor: default;
-    font-size: 50px;
+    font-size: 80px;
 }
 
 .board .incorrect {
@@ -243,6 +243,6 @@ footer {
     }
 
     .board .open {
-        font-size: 50px;
+        font-size: 60px;
     }
 }
