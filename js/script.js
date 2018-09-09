@@ -19,8 +19,8 @@ let openCards = [];
 let startTime;
 
 // function to shuffle emojis
-function shuffle(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
+shuffle = (array) => {
+    let currentIndex = array.length, temporaryValue, randomIndex;
     while (currentIndex !== 0) {
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex -= 1;
@@ -32,7 +32,7 @@ function shuffle(array) {
 }
 
 // function to update timer
-function timer() {
+timer = () => {
     time++;
     const minutes = Math.floor(time / 60);
     const seconds = time % 60;
@@ -41,7 +41,7 @@ function timer() {
 }
 
 // function to update the star count relative to the moves count
-function starsUpdate() {
+starsUpdate = () => {
     if (moves > 12) {
         stars = 2;
         starsPane[2].style.display = 'none';
@@ -56,19 +56,19 @@ function starsUpdate() {
     }
 }
 
-function showModal() {
+showModal = () => {
     modal.classList.add('show-modal');
 }
 
 // function to start or restart the game
-function gameStart(array) {
+gameStart = array => {
     // make emoji pairs and shuffle the array
     array = shuffle(array.concat(array));
 
     // create the list item for each emoji and add it to the board
     let cardHTML = '';
-    array.forEach(function(i) {
-        cardHTML += `<li class="card">${i}</li>`;
+    array.forEach(index => {
+        cardHTML += `<li class="card">${index}</li>`;
     });
     board.innerHTML = cardHTML;
 
@@ -77,8 +77,8 @@ function gameStart(array) {
     movesPane.textContent = moves;
 
     stars = 3;
-    starsPane.forEach(function(i) {
-        i.style.color = '#ffd800';
+    starsPane.forEach(star => {
+        star.style.color = '#ffd800';
     });
 
     time = 0;
@@ -99,7 +99,7 @@ function gameStart(array) {
 }
 
 // function to end the game
-function gameEnd() {
+gameEnd = () => {
     // determine star emojis
     if (stars === 3) {
         stars = '⭐️⭐️⭐️';
@@ -125,7 +125,7 @@ function gameEnd() {
 // start the game
 gameStart(emojis);
 
-board.addEventListener('click', function(evt) {
+board.addEventListener('click', evt => {
     const card = evt.target;
     // only flip a card and add to array if a card is clicked on and there is less than 2 cards open
     if (card.classList.contains('card') && openCards.length < 2) {
@@ -148,7 +148,7 @@ board.addEventListener('click', function(evt) {
                     moves++;
                     movesPane.textContent = moves;
                     starsUpdate();
-                    setTimeout(function() {
+                    setTimeout(() => {
                         openCards[0].classList.remove('correct');
                         openCards[1].classList.remove('correct');
                         openCards = [];
@@ -165,7 +165,7 @@ board.addEventListener('click', function(evt) {
                     moves++;
                     movesPane.textContent = moves;
                     starsUpdate();
-                    setTimeout(function() {
+                    setTimeout(() => {
                         openCards[0].classList.remove('open', 'show', 'incorrect');
                         openCards[1].classList.remove('open', 'show', 'incorrect');
                         openCards = [];
