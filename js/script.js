@@ -12,9 +12,7 @@ const congrats = document.querySelector('.congrats');
 
 // declare all let variables
 let stars = 3;
-let moves = 0;
-let matches = 0;
-let time = 0;
+let moves = matches = time = 0;
 let openCards = [];
 let startTime;
 
@@ -154,8 +152,8 @@ board.addEventListener('click', evt => {
                         openCards = [];
                     }, 300);
                     matches++;
+                    // if all matches are made, run gameEnd function
                     if (matches === 8) {
-                        // run gameover function
                         gameEnd();
                     }
                 } else {
@@ -176,11 +174,12 @@ board.addEventListener('click', evt => {
     }
 });
 
-// restart the game
-restartBtn.addEventListener('click', function() {
+// restart the game on restart button click
+restartBtn.addEventListener('click', () => {
     gameStart(emojis);
 });
 
-playAgainBtn.addEventListener('click', function() {
+// restart the game on play again button click on modal
+playAgainBtn.addEventListener('click', () => {
     gameStart(emojis);
 })
