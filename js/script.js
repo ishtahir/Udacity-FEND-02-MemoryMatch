@@ -17,7 +17,7 @@ let openCards = [];
 let startTime;
 
 // function to shuffle emojis
-shuffle = (array) => {
+function shuffle(array) {
     let currentIndex = array.length, temporaryValue, randomIndex;
     while (currentIndex !== 0) {
         randomIndex = Math.floor(Math.random() * currentIndex);
@@ -30,7 +30,7 @@ shuffle = (array) => {
 }
 
 // function to update timer
-timer = () => {
+function timer() {
     time++;
     const minutes = Math.floor(time / 60);
     const seconds = time % 60;
@@ -39,7 +39,7 @@ timer = () => {
 }
 
 // function to update the star count relative to the moves count
-starsUpdate = () => {
+function starsUpdate() {
     if (moves > 12) {
         stars = 2;
         starsPane[2].style.display = 'none';
@@ -54,12 +54,12 @@ starsUpdate = () => {
     }
 }
 
-showModal = () => {
+function showModal() {
     modal.classList.add('show-modal');
 }
 
 // function to start or restart the game
-gameStart = array => {
+function gameStart(array) {
     // make emoji pairs and shuffle the array
     array = shuffle(array.concat(array));
 
@@ -97,7 +97,7 @@ gameStart = array => {
 }
 
 // function to end the game
-gameEnd = () => {
+function gameEnd() {
     // determine star emojis
     if (stars === 3) {
         stars = '⭐️⭐️⭐️';
