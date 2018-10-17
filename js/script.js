@@ -76,7 +76,7 @@ function gameStart(array) {
 
     stars = 3;
     starsPane.forEach(star => {
-        star.style.color = '#ffd800';
+        star.style.display = 'inline-block';
     });
 
     time = 0;
