@@ -1,0 +1,216 @@
+/* BASE */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #4a4a4a url('../images/dark_embroidery.png');
+    font-family: 'IM Fell French Canon SC', serif;
+    color: #fff;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* HEADER */
+header {
+    width: 660px;
+    min-width: 360px;
+    margin: 20px auto;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+header h1 {
+    margin: 20px auto 40px auto;
+    border-bottom: 3px solid #fff;
+    width: 600px;
+    text-align: center;
+    letter-spacing: 8px;
+}
+
+/* SCORECARD */
+.scorecard {
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Roboto', sans-serif;
+}
+
+.scorecard p {
+    margin: 0;
+    padding: 0;
+}
+
+.scorecard .restart {
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.scorecard .restart:hover {
+    transform: rotate(1turn);
+}
+
+/* BOARD AND CARDS */
+.board {
+    width: 660px;
+    min-height: 680px;
+    min-width: 360px;
+    background: linear-gradient(#41f4c1, #3da4ed);
+    margin: 30px auto;
+    list-style: none;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px;
+    box-shadow: 15px 10px 15px rgba(250,250,250,0.2);
+}
+
+.board .card {
+    width: 125px;
+    height: 125px;
+    background: #474747;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0;
+    box-shadow: 5px 5px 5px rgba(66,66,66, 0.3);
+    cursor: pointer;
+    user-select: none;
+}
+
+.board .open {
+    background: #ddd;
+    font-size: 50px;
+    color: #000;
+}
+
+.board .match {
+    background: #00ff00;
+    cursor: default;
+    font-size: 50px;
+}
+
+.board .incorrect {
+    animation-name: shake;
+    animation-duration: 0.5s;
+    transition: all 0.5s;
+    background-color: #ff0000 !important;
+ }
+
+.board .correct {
+    transform: rotate(360deg);
+    transition: all 0.3s;
+    background-color: #00ff00 !important;
+}
+
+/* GAMEEND MODAL */
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 1s linear 1s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.modal-contents {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 1rem 1.5 rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+    color: black;
+    text-align: center;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1.2em;
+}
+
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 1s linear 1s, opacity 0.25 0s, transform 0.25s;
+}
+
+.modal .playAgainBtn {
+   padding: 10px;
+   font-size: 1em;
+   min-width: 150px;
+   border-radius: 10px;
+   cursor: pointer;
+   text-transform: uppercase;
+   letter-spacing: 5px;
+   background-color: #00a1ce;
+   color: #fff;
+   font-weight: bold;
+   margin-bottom: 30px;
+}
+
+.modal .playAgainBtn:hover {
+   background-color: #fff;
+   color: #00a1ce;
+}
+
+/* FOOTER */
+footer {
+   text-align: center;
+   color: black;
+   padding: 10px;
+   width: 100%;
+   background-color: white;
+   font-family: 'Helvetica Neue', serif;
+   margin-top: 2em;
+}
+
+.social,
+.social a {
+   font-size: 35px;
+   color: #bbb;
+}
+
+.fa-twitter, .fa-envelope {
+   padding: 5px 10px;
+   margin: 0 5px;
+}
+
+.hearts {
+   color: red;
+}
+
+/* ANIMATION FOR .incorrect CLASS */
+@keyframes shake {
+    0% {transform: translateX(0);}
+    20% {transform: translateX(-20px);}
+    40% {transform: translateX(20px);}
+    60% {transform: translateX(-20px);}
+    80% {transform: translateX(20px);}
+    100% {transform: translateX(0);}
+}
