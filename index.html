@@ -1,46 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Memory Match</title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css?family=IM+Fell+French+Canon+SC|PT+Sans|Roboto" rel="stylesheet">
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
-        <div class="container">
-            <header>
-                <h1>Memory Match</h1>
-                <div class="scorecard">
-                    <div class="stars">
-                        <span class="star-emoji">⭐️</span>
-                        <span class="star-emoji">⭐️</span>
-                        <span class="star-emoji">⭐️</span>
-                    </div>
-                    <p>Moves: <span class="moves"></span></p>
-                    <p>Time: <span class="time"></span></p>
-                    <i class="fas fa-redo-alt restart"></i>
-                </div>
-            </header>
+  <head>
+    <title>Memory Match</title>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+      integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=IM+Fell+French+Canon+SC|PT+Sans|Roboto"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Memory Match</h1>
+        <nav class="scorecard">
+          <div class="stars">
+            <span class="star-emoji">⭐️</span>
+            <span class="star-emoji">⭐️</span>
+            <span class="star-emoji">⭐️</span>
+          </div>
+          <p>Moves: <span class="moves"></span></p>
+          <p>Time: <span class="time"></span></p>
+          <i class="fas fa-redo-alt restart"></i>
+        </nav>
+      </header>
 
-            <div class="modal">
-                <div class="modal-contents">
-                    <h1 class="congrats"></h1>
-                    <p class="stats"></p>
-                    <button class="playAgainBtn"></button>
-                </div>
-            </div>
-            <div class="overlay"></div>
-
-            <ul class="board"></ul>
+      <div class="modal">
+        <div class="modal-contents">
+          <h1 class="congrats"></h1>
+          <p class="stats"></p>
+          <button class="playAgainBtn"></button>
         </div>
-        <footer>
-            <p>Made with <span class="hearts">♥</span> by Ish Tahir</p>
-            <div class="social">
-                <a href="https://twitter.com/ishtahir"><i class="fab fa-twitter"></i></a>
-                <a href="mailto:ishtahir@icloud.com"><i class="fas fa-envelope"></i></a>
-            </div>
-        </footer>
-        <script src="js/script.js"></script>
-    </body>
+      </div>
+      <div class="overlay"></div>
+
+      <ul class="board"></ul>
+    </div>
+    <footer>
+      <p>Made with <span class="hearts">♥</span> by Ish Tahir</p>
+      <div class="social">
+        <a href="https://twitter.com/ishtahir"
+          ><i class="fab fa-twitter"></i
+        ></a>
+        <a href="mailto:ishtahir@icloud.com"><i class="fas fa-envelope"></i></a>
+      </div>
+    </footer>
+    <script src="js/script.js"></script>
+  </body>
 </html>
